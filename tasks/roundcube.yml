@@ -90,6 +90,11 @@
     group=www-data
     mode=0644
 
+- name: Enable proxy module (rspamd gui)
+  apache2_module:
+    state: present
+    name: proxy
+
 - name: Configure Apache for Roundcube
   template: src=etc_apache2_sites-available_roundcube.j2
     dest=/etc/apache2/sites-available/roundcube.conf

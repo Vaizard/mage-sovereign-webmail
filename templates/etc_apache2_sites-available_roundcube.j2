@@ -32,6 +32,12 @@
 	Require all denied
     </Directory>
 
+    ### rspamd gui start
+        ProxyPreserveHost On
+        ProxyPass "/rspamd/" "http://localhost:11334/"
+        ProxyPassReverse "/teach/" "http://localhost:11334/"
+    ### rspamd gui end
+
     LogLevel		    warn
     ErrorLog                /var/log/apache2/roundcube.info-error_log
     CustomLog               /var/log/apache2/roundcube.info-access_log common
